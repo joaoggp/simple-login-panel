@@ -1,0 +1,74 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.login-panel{
+    text-align: center;
+    justify-content: center;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 200;
+    display: block;
+    margin: 50px 30px auto;
+}
+
+input {
+    display: block;
+    margin: auto;
+    padding-left: 8px;
+    text-align: left;
+    outline: none;
+    border: 1px solid rgba(128, 128, 128, 0.548);
+    width: 20vh;
+    height: 2.5vh;
+    border-radius: 5px;
+}
+
+#login-submit{
+    width: 10vh;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 2rem;
+    transition: width .5s ease-in-out, heigh .5s ease-in-out;
+}
+
+#login-submit:hover{
+    width: 11vh;
+    height: 2.8vh;
+}
+
+#register-submit{
+    width: 10vh;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 2rem;
+    transition: width .5s ease-in-out, heigh .5s ease-in-out;
+}
+
+#register-submit:hover{
+    width: 11vh;
+    height: 2.8vh;
+}
+
+#advice-user{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 2rem;
+    font-size: 30px;
+    color: red;
+    font-weight: 500;
+}
