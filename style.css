@@ -14,13 +14,19 @@ header {
 .login-panel{
     text-align: center;
     justify-content: center;
+    background-color: rgba(124, 124, 124, 0.527);
+    width: 20rem;
+    margin: auto;
+    padding: .1rem .9rem;
+    border-radius: 10px;
 }
 
 label {
     font-size: 20px;
     font-weight: 200;
     display: block;
-    margin: 50px 30px auto;
+    margin: 50px 0px 10px 0px;
+    text-align: center;
 }
 
 input {
@@ -30,39 +36,52 @@ input {
     text-align: left;
     outline: none;
     border: 1px solid rgba(128, 128, 128, 0.548);
-    width: 20vh;
-    height: 2.5vh;
+    width: auto;
+    min-width: 24vh;
+    max-width: 24vh;
+    min-height: 4vh;
+    max-height: 4vh;
+    height: auto;
     border-radius: 5px;
 }
 
-#login-submit{
-    width: 10vh;
+.login-btns input{
     display: inline-block;
+}
+
+#login-submit{
+    min-width: 7rem;
+    min-height: 2.5rem;
+    width: auto;
+    height: auto;
     font-size: 25px;
     font-weight: 200;
     text-align: center;
     margin-top: 2rem;
     transition: width .5s ease-in-out, heigh .5s ease-in-out;
-}
-
-#login-submit:hover{
-    width: 11vh;
-    height: 2.8vh;
 }
 
 #register-submit{
-    width: 10vh;
+    padding-right: 5px;
+    min-width: 7rem;
+    min-height: 2.5rem;
+    width: auto;
+    height: auto;
     display: inline-block;
     font-size: 25px;
     font-weight: 200;
     text-align: center;
     margin-top: 2rem;
-    transition: width .5s ease-in-out, heigh .5s ease-in-out;
+    transition: 8s;
 }
 
 #register-submit:hover{
-    width: 11vh;
-    height: 2.8vh;
+    cursor: pointer;
+}
+
+
+#login-submit:hover{
+    cursor: pointer;
 }
 
 #advice-user{

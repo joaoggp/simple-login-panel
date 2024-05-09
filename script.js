@@ -12,10 +12,34 @@ document.getElementById('register-submit').addEventListener('click', cadastrarUs
 const aviso = document.getElementById('advice-user')
 
 avisoFunc = (advcText) => {
+    switch (advcText) {
+        case 1:
+            aviso.style.color = "green"
+            aviso.innerText = 'Logado no Sistema!'
+            setTimeout(() => {
+                aviso.innerText = ''
+            }, "4000")
+            return
+        case 2:
+            aviso.style.color = "green"
+            aviso.innerText = 'Usuário Cadastrado com Sucesso!'
+            setTimeout(() => {
+                aviso.innerText = ''
+            }, "4000")
+            return
+        case 3:
+            aviso.style.color = "red"
+            aviso.innerText = 'Senha Incorreta!'
+            setTimeout(() => {
+                aviso.innerText = ''
+            }, "4000")
+            return
+    }
+    aviso.style.color = "red"
     aviso.innerText = advcText
     setTimeout(() => {
         aviso.innerText = ''
-    }, "2000")
+    }, "4000")
 }
 
 camposVazios = (nome, senha) => {
@@ -40,7 +64,7 @@ function cadastrarUsuario() {
         else {
             let novoUsuario = new usuario(nomeUsuario.value, senhaUsuario.value)
             bancoDeDados.push(novoUsuario)
-            console.log(novoUsuario)
+            avisoFunc(2)
         }
     }
 }
@@ -48,16 +72,20 @@ function cadastrarUsuario() {
 function logarSistema() {
     let nomeUsuario = document.getElementById('user-input')
     let senhaUsuario = document.getElementById('user-pass')
+    if (camposVazios(nomeUsuario.value, senhaUsuario.value) === true) {
+        let verificador = bancoDeDados.findIndex(user => user.nome === nomeUsuario.value)
 
-    let verificador = bancoDeDados.findIndex(user => user.nome === nomeUsuario.value)
-
-    if (verificador !== -1) {
-        if (nomeUsuario.value === bancoDeDados[verificador].nome && senhaUsuario.value === bancoDeDados[verificador].senha) {
-            avisoFunc('Logado no Sistema!')
+        if (verificador !== -1) {
+            if (nomeUsuario.value === bancoDeDados[verificador].nome && senhaUsuario.value !== bancoDeDados[verificador].senha) {
+                avisoFunc(3)
+            }
+            else if (nomeUsuario.value === bancoDeDados[verificador].nome && senhaUsuario.value === bancoDeDados[verificador].senha) {
+                avisoFunc(1)
+            }
         } else {
-            avisoFunc('Usuário ou senha incorretos!')
+            avisoFunc('Usuário não encontrado!')
         }
     } else {
-        avisoFunc('Usuário não encontrado!')
+        return
     }
 }
